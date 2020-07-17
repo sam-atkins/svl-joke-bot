@@ -24,6 +24,7 @@ func router() *chi.Mux {
 	router := chi.NewRouter()
 
 	router.Get("/health", healthCheckView)
+	router.Get("/joke", getDadJokeView)
 
 	return router
 }
