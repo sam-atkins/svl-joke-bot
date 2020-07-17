@@ -1,0 +1,24 @@
+version = 0.1
+
+[default.build.paramaters]
+profile="sam__dev_svl"
+debug=true
+region="eu-west-1"
+skip_pull_image=true
+use_container=true
+
+[default.local_start_api.parameters]
+port=8080
+
+[default.package.parameters]
+profile="sam__dev_svl"
+region="eu-west-1"
+output_template_file="packaged.yaml"
+s3_bucket="svl-joke-bot-bucket"
+
+[default.deploy.parameters]
+profile="sam__dev_svl"
+capabilities="CAPABILITY_IAM"
+region="eu-west-1"
+s3_bucket="svl-joke-bot-bucket"
+stack_name="svl-joke-bot"
