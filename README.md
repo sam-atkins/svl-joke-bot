@@ -1,5 +1,21 @@
 # svl-joke-bot
 
+- [svl-joke-bot](#svl-joke-bot)
+  - [Local Dev](#local-dev)
+  - [Deploy](#deploy)
+  - [Generated Docs](#generated-docs)
+  - [Requirements](#requirements)
+  - [Setup process](#setup-process)
+    - [Installing dependencies & building the target](#installing-dependencies--building-the-target)
+    - [Local development](#local-development)
+  - [Packaging and deployment](#packaging-and-deployment)
+    - [Testing](#testing)
+- [Appendix](#appendix)
+    - [Golang installation](#golang-installation)
+      - [Homebrew (Mac)](#homebrew-mac)
+      - [Chocolatey (Windows)](#chocolatey-windows)
+  - [Bringing to the next level](#bringing-to-the-next-level)
+
 ## Local Dev
 
 ```bash
@@ -8,6 +24,24 @@ make api
 
 # in a separate terminal run and enjoy the lolz
 http http://localhost:3000/joke
+```
+
+## Deploy
+
+- Set up a user and add credentials per the AWS [docs](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html)
+- The user will require permissions:
+  - Lambda
+  - IAM
+  - S3 Put Object
+  - API Gateway
+  - Cloud Formation
+- Add the user profile name in `samconfig.toml`
+- Create a S3 bucket and update the bucket name and region in `samconfig.toml`
+
+From the project root, run this command:
+
+```bash
+make deploy
 ```
 
 ## Generated Docs
