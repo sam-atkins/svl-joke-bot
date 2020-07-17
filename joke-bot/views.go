@@ -4,7 +4,6 @@ import (
 	"encoding/json"
 	"errors"
 	"io/ioutil"
-	"log"
 	"net/http"
 )
 
@@ -30,9 +29,6 @@ func requestJSON(url string) ([]byte, error) {
 		return nil, err
 	}
 	defer resp.Body.Close()
-
-	log.Print("response:\n")
-	log.Print(resp)
 
 	if resp.StatusCode != 200 {
 		err := errors.New("Request to Dad Joke API failed")
@@ -60,7 +56,9 @@ func getDadJokeView(w http.ResponseWriter, r *http.Request) {
 	jk := dadJokeResponse{}
 	err = json.Unmarshal(body, &jk)
 	if err != nil {
-		log.Fatal(err)
+		se := serverError{}
+		se.applyServerError(err, "Whoops, no jokes right now", w)
+		return
 	}
 	data := response{
 		Joke: &jk.Joke,
