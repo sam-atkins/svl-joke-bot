@@ -1,5 +1,17 @@
 # svl-joke-bot
 
+## Local Dev
+
+```bash
+# in a terminal run
+make api
+
+# in a separate terminal run and enjoy the lolz
+http http://localhost:3000/joke
+```
+
+## Generated Docs
+
 This is a sample template for svl-joke-bot - Below is a brief explanation of what we have generated for you:
 
 ```bash
@@ -21,13 +33,13 @@ This is a sample template for svl-joke-bot - Below is a brief explanation of wha
 
 ## Setup process
 
-### Installing dependencies & building the target 
+### Installing dependencies & building the target
 
-In this example we use the built-in `sam build` to automatically download all the dependencies and package our build target.   
-Read more about [SAM Build here](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-cli-command-reference-sam-build.html) 
+In this example we use the built-in `sam build` to automatically download all the dependencies and package our build target.
+Read more about [SAM Build here](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-cli-command-reference-sam-build.html)
 
 The `sam build` command is wrapped inside of the `Makefile`. To execute this simply run
- 
+
 ```shell
 make
 ```
