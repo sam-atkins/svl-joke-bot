@@ -23,7 +23,7 @@
 make api
 
 # in a separate terminal run and enjoy the lolz
-http http://localhost:3000/joke
+http http://localhost:8080/joke
 ```
 
 ## Deploy
