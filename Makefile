@@ -11,4 +11,4 @@ api:
 	$(BUILD) && $(API)
 
 deploy:
-	$(BUILD) && sam package && sam deploy --template-file packaged.yaml --stack-name $(STACK_NAME)
+	$(BUILD) && sam deploy --stack-name $(STACK_NAME)
