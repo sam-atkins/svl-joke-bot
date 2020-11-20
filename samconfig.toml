@@ -1,9 +1,9 @@
 version = 0.1
 
-[default.build.paramaters]
+[default.build.parameters]
 profile="sam__dev_svl"
 debug=true
-region="eu-west-1"
+region="eu-west-2"
 skip_pull_image=true
 use_container=true
 
@@ -12,13 +12,15 @@ port=8080
 
 [default.package.parameters]
 profile="sam__dev_svl"
-region="eu-west-1"
+region="eu-west-2"
 output_template_file="packaged.yaml"
+# the bucket name may need to change to what is produced via CDK
 s3_bucket="svl-joke-bot-bucket"
 
 [default.deploy.parameters]
 profile="sam__dev_svl"
 capabilities="CAPABILITY_IAM"
-region="eu-west-1"
+region="eu-west-2"
+# the bucket name may need to change to what is produced via CDK
 s3_bucket="svl-joke-bot-bucket"
 stack_name="svl-joke-bot"

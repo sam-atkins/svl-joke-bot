@@ -36,7 +36,8 @@ http http://localhost:8080/joke
   - API Gateway
   - Cloud Formation
 - Add the user profile name in `samconfig.toml`
-- Create a S3 bucket and update the bucket name and region in `samconfig.toml`
+- Create a S3 bucket using CDK (refer to the [README](infra/README.md) and update the bucket name and region in `samconfig.toml`
+  - TODO: automate getting the bucket name from SSM Param Store and adding to the packaging and deploy config file
 
 From the project root, run this command:
 
