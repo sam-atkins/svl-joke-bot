@@ -4,6 +4,8 @@ This uses AWS CDK to add the S3 bucket needed as part of packaging and deploying
 
 ## Deploy instructions
 
+Create an IAM user/role with and save the name and access details to `~/.aws/credentials`.
+
 All `cdk` commands need to include the profile option along with the profile name if you have more than one AWS profile and don't want to use the default. Use the name of the profile stored in `~/.aws/credentials`.
 
 Run the commands from the `infra/` directory.
