@@ -1,14 +1,13 @@
-BUILD=sam build
-API=sam local start-api --skip-pull-image
 STACK_NAME=svl-joke-bot
 
 .PHONY: build
 
 build:
-	$(BUILD)
+	cd infra && source venv/bin/activate && python ./config_writer.py
+	sam build
 
-api:
-	$(BUILD) && $(API)
+api: build
+	sam local start-api --skip-pull-image
 
-deploy:
-	$(BUILD) && sam deploy --stack-name $(STACK_NAME)
+deploy: build
+	sam deploy --stack-name $(STACK_NAME)
